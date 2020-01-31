@@ -12,3 +12,6 @@ Added experimental sections
 2)Manually Setting up weights
 3)Testing
 
+
+commit 31/01/2020 7:51pm
+Added code for playing with ANNModel() with random weights
