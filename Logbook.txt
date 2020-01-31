@@ -1,3 +1,14 @@
 Last commit info 31/01/2020
 Witnessed out of mempry error.
 Try running on GPU.
+
+commit 31/01/2020 11:47am
+Changed activation function from ReLU to Sigmoid in ANNModel
+
+
+commit 31/01/2020 4:01pm
+Added experimental sections
+1)Experimenting with backpropagation
+2)Manually Setting up weights
+3)Testing
+
