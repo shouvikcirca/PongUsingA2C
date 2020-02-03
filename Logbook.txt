@@ -15,3 +15,7 @@ Added experimental sections
 
 commit 31/01/2020 7:51pm
 Added code for playing with ANNModel() with random weights
+
+
+commit 3/02/2020 4:42pm
+Observation of one feedforward fed as input to next feedforward.
