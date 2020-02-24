@@ -23,3 +23,7 @@ Observation of one feedforward fed as input to next feedforward.
 
 commit 24/02/2020 4:38pm
 Added code for ActorCritic running and backprop.Testing pending
+
+
+commit 24/02/2020 4:51pm
+Entire process working for 1 episode
