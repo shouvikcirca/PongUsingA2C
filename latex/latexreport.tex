@@ -11,7 +11,7 @@ I present a conparison of computational efficiency between training an agent for
 \end{abstract}
 
 \section*{Keywords}
-Advantage Actor Critic, Asynchronous
+Advantage Actor Critic, Asynchronous, Synchronous
 
 \section*{Intorduction}
 Reinforcement Learning algorithms are a class of algorithms that have proven to be quite promising in the field of decision making. That makes games a suitable area for their application. Combine them with Deep Learning which is known to produce rich representations of input data (visual data in this case) and we get the ability to play games at a human or even  better-than-human level (1,2). The game chosen here is Pong which is an atari game and is provided as ann environment in OpenAI gym (3).
@@ -47,6 +47,9 @@ where c is a parameter used to control the relative learning of the actor and th
 The implementation is done in a way such that the actor and the critic have some parameters in common. The critic does not update these shared parameters because it can lead to instability.
 
 \section*{Parallelized Setup}
+The setup consists of multiple cores being used, each of which belongs to the same system. Each process gets its own copy of environment and agents and each agent learns independently and updates the parameters of the model asynchronously [BA3C reference] or synchronously [reference ]. In the asynchronous approach, the different processes share the model's parameters and hence update the parameters independently, however these can lead to stale gradients[reference] as a process might be working on outdated parameters. In the syncronous setting, there is ac central process which waits for all the processes to send their updated weights, averages them and then  updates the actual model which is then shared to the other processes and the iterations continue.
+
+
 
 
 \end{document}
