@@ -47,8 +47,13 @@ where c is a parameter used to control the relative learning of the actor and th
 The implementation is done in a way such that the actor and the critic have some parameters in common. The critic does not update these shared parameters because it can lead to instability.
 
 \section*{Parallelized Setup}
-The setup consists of multiple cores being used, each of which belongs to the same system. Each core gets its own copy of environment that is each run is a different processand agents and each agent learns independently and updates the parameters of the model asynchronously [BA3C reference] or synchronously [reference ]. In the asynchronous approach, the different processes share the model's parameters and hence update the parameters 
+The setup consists of multiple cores being used, each of which belongs to the same system. Each process gets its own copy of environment and agents and each agent learns independently and updates the parameters of the model asynchronously [BA3C reference] or synchronously [reference ]. In the asynchronous approach, the different processes share the model's parameters and hence update the parameters independently, however these can lead to stale gradients[reference] as a process might be working on outdated parameters. In the syncronous setting, there is ac central process which waits for all the processes to send their updated weights, averages them and then  updates the actual model which is then shared to the other processes and the iterations continue.
 
+\section*{Atari Pong}
+Pong is one of the Atari games.[reference].Each state is available as a 3 dimensional tensor of dimensions  3 X 210 X 160 where 3 represents the RGB channels. Each element is an integer in [0,255]. There are six actions with three of them being redundant. FIRE equals NOOP, LEFT equals LEFTFIRE and RIGHT equals RIGHTFIRE. LEFT and RIGHT move the agent in the corresponding directions while NOOP keeps the agent in its previous position. The agent is displayed on the right and the enemy on the left and the first to score 21 goals wins. (Artificial Intelligence, Martin Atzmueller, Wouter Duivesteijn)
+
+\section*{Architecture}
+The model is a 2-headed neural network. One head is the Actor and the Other, the Critic.
 
 
 
