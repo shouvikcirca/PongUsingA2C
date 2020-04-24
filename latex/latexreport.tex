@@ -1,4 +1,4 @@
-\documentclass[12pt,a4]{article}
+\documentclass[12pt,a4paper]{article}
 
 \usepackage[margin=1cm]{geometry}
 \usepackage{inputenc}
@@ -13,7 +13,7 @@ I present a conparison of computational efficiency between training an agent for
 \section*{Keywords}
 Advantage Actor Critic, Asynchronous, Synchronous
 
-\section*{Intorduction}
+\section*{Introduction}
 Reinforcement Learning algorithms are a class of algorithms that have proven to be quite promising in the field of decision making. That makes games a suitable area for their application. Combine them with Deep Learning which is known to produce rich representations of input data (visual data in this case) and we get the ability to play games at a human or even  better-than-human level (1,2). The game chosen here is Pong which is an atari game and is provided as ann environment in OpenAI gym (3).
 
 \section*{Reinforcement Learning}
@@ -25,7 +25,7 @@ The value of a state s under a policy \(\pi\) is the expected return when starti
 \section*{Advantage Actor Critic}
 The agent here consists of 2 neural networks. One of them, the Actor, spits out a probability distributionover a set of actions \(A\) at each time step and learns the optimal policy, based on a loss function, more about which is described later. The other neural network, the Critic calculates the action-value at each time step telling how good or bad the action taken is and learns to give better estimates of the value, that is learns to be a better critic.\\
 Advantage is a function that tells how good or bad the actor network performed relative to the critic's expectations.
-\pagebreak
+
 \section*{Loss Function}
 Let us have a look at the components one by one and finally bring them together
 \begin{enumerate}
@@ -50,9 +50,12 @@ The implementation is done in a way such that the actor and the critic have some
 The setup consists of multiple cores being used, each of which belongs to the same system. Each process gets its own copy of environment and agents and each agent learns independently and updates the parameters of the model asynchronously [BA3C reference] or synchronously [reference ]. In the asynchronous approach, the different processes share the model's parameters and hence update the parameters independently, however these can lead to stale gradients[reference] as a process might be working on outdated parameters. In the syncronous setting, there is ac central process which waits for all the processes to send their updated weights, averages them and then  updates the actual model which is then shared to the other processes and the iterations continue.
 
 \section*{Atari Pong}
-Pong is one of the Atari games.[reference].Each state is available as a 3 dimensional tensor of dimensions  3 X 210 X 160 where 3 represents the RGB channels. Each element is an integer in [0,255]. There are six actions with three of them being redundant. FIRE equals NOOP, LEFT equals LEFTFIRE and RIGHT equals RIGHTFIRE. LEFT and RIGHT move the agent in the corresponding directions while NOOP keeps the agent in its previous position. The agent is displayed on the right and the enemy on the left and the first to score 21 goals wins. (Artificial Intelligence, Martin Atzmueller, Wouter Duivesteijn)
+Pong is one of the Atari games.[reference].Each state is available as a 3 dimensional tensor of dimensions  3 X 210 X 160 where 3 represents the RGB channels. Each element is an integer in [0,255]. There are six actions with three of them being redundant. FIRE equals NOOP, LEFT equals LEFTFIRE and RIGHT equals RIGHTFIRE. LEFT and RIGHT move the agent in the corresponding directions while NOOP keeps the agent in its previous position. The agent is displayed on the right and the enemy on the left. (Artificial Intelligence, Martin Atzmueller, Wouter Duivesteijn) If the agent misses the ball a reward of -1 is received, if the enemy misses the ball a reward of +1 is received.In all the other states a reward of 0 is received.The first to score 21 goals wins and that marks the end of the episode.\\
+A reward is what the agent implicitly makes use of to learn while the points displayed on the screen are the scores of each of the players. The winner is the first player to score 21.
 
-
+\section*{Implementation}
+The model is a 2-headed neural network. One head is the Actor and the other, the Critic.The first few layers of the network are shared. Only fully connected layers have been used. The input is flattened giving an input size of 100800. The entire frame is not needed for decision making as is shown in the figure. So the input is cropped and converted to grayscale before feeding into the network.That brings down the input size to 21190 since each frame is now 1 X 210 X 160.\\
+The output of the Actor head consists of three nodes giving a probability distribution over the action space. The output of the Critic head has one node because it gives a scalar. The learning rate chosen is 10\(^{-3}\) and the optimizer used is Adam.[Appropriate reference] The Critic network does not update the shared parameters.
 
 
 

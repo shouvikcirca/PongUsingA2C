@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.16)  24 APR 2020 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.16)  24 APR 2020 22:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -58,12 +58,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
-)
-
-LaTeX Warning: Unused global option(s):
-    [a4].
-
-(./latexreport.aux)
+) (./latexreport.aux)
 \openout1 = `latexreport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -78,21 +73,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
-* paper: <default>
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(28.45274pt, 557.38951pt, 28.45274pt)
-* v-part:(T,H,B)=(28.45274pt, 738.0645pt, 28.45274pt)
-* \paperwidth=614.295pt
-* \paperheight=794.96999pt
-* \textwidth=557.38951pt
-* \textheight=738.0645pt
+* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
+* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=540.60239pt
+* \textheight=788.14136pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-80.81725pt
@@ -100,7 +94,7 @@ LaTeX Font Info:    ... okay on input line 7.
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
+* \marginparwidth=35.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -121,29 +115,30 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 20.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./latexreport.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+(./latexreport.aux) ) 
 Here is how much of TeX's memory you used:
- 775 strings out of 493029
- 10645 string characters out of 6136233
- 73238 words of memory out of 5000000
- 4363 multiletter control sequences out of 15000+600000
+ 773 strings out of 493029
+ 10632 string characters out of 6136233
+ 74179 words of memory out of 5000000
+ 4361 multiletter control sequences out of 15000+600000
  7590 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 24i,4n,32p,814b,137s stack positions out of 5000i,500n,10000p,200000b,80000s
-<
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb>
-Output written on latexreport.pdf (2 pages, 110000 bytes).
+ 24i,4n,32p,820b,173s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb>
+Output written on latexreport.pdf (3 pages, 119000 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
