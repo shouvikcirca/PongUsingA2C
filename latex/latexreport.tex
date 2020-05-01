@@ -2,12 +2,12 @@
 
 \usepackage[margin=1cm]{geometry}
 \usepackage{inputenc}
+\begin{abstract}
+I present a conparison of computational efficiency between training an agent for playing Pong in the Atari environment in a sequential manner and in a paral
 
 
 \begin{document}
-\pagestyle{empty}
-\begin{abstract}
-I present a conparison of computational efficiency between training an agent for playing Pong in the Atari environment in a sequential manner and in a parallelized manner. The agent is trained using a Deep Reinforcement Learning Advantage Actor Critic (A2C). The parallel version of the algorithm Asynchronous A2C (A3C) is analyzed using multiple CPU cores on a single machine instead of special hardware like GPU(Graphical Processing Units) and TPU(Tensor Processing Units).
+\pagestyle{empty}lelized manner. The agent is trained using a Deep Reinforcement Learning Advantage Actor Critic (A2C). The parallel version of the algorithm Asynchronous A2C (A3C) is analyzed using multiple CPU cores on a single machine instead of special hardware like GPU(Graphical Processing Units) and TPU(Tensor Processing Units).
 \end{abstract}
 
 \section*{Keywords}
@@ -54,9 +54,9 @@ Pong is one of the Atari games.[reference].Each state is available as a 3 dimens
 A reward is what the agent implicitly makes use of to learn while the points displayed on the screen are the scores of each of the players. The winner is the first player to score 21.
 
 \section*{Implementation}
-The model is a 2-headed neural network. One head is the Actor and the other, the Critic.The first few layers of the network are shared. Only fully connected layers have been used. The input is flattened giving an input size of 100800. The entire frame is not needed for decision making as is shown in the figure. So the input is cropped and converted to grayscale before feeding into the network.That brings down the input size to 21190 since each frame is now 1 X 210 X 160.\\
-The output of the Actor head consists of three nodes giving a probability distribution over the action space. The output of the Critic head has one node because it gives a scalar. The learning rate chosen is 10\(^{-3}\) and the optimizer used is Adam.[Appropriate reference] The Critic network does not update the shared parameters.
+The model is a 2-headed neural network. One head is the Actor and the other, the Critic.The first few layers of the network are shared. Only fully connected layers have been used. The input is flattened giving an input size of 100800. The entire frame is not needed for decisiThe learning rate chosen is 10\(^{-3}\) and the optimizer used is Adam.[Appropriate reference] The Critic network does not update the shared parameters.
 
 
-
+on making as is shown in the figure. So the input is cropped and converted to grayscale before feeding into the network.That brings down the input size to 21190 since each frame is now 1 X 210 X 160.\\
+The output of the Actor head consists of three nodes giving a probability distribution over the action space. The output of the Critic head has one node because it gives a scalar. 
 \end{document}
