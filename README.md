@@ -1,3 +1,6 @@
+**Training_Sequential.ipynb** contains the latest code for Sequential training.
+
+
 **Installation**  
     
 ```
